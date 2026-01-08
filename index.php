@@ -1,5 +1,5 @@
 <?php
-include('./config/config.php');
+include('../Crud-basics/config/config.php');
 
 $dsn = "mysql:host=$dbHost;dbname=$dbName;charset=UTF8";
 $pdo = new PDO($dsn, $dbUser, $dbPass);
@@ -26,6 +26,7 @@ $result = $statement->fetchAll(PDO::FETCH_OBJ);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CRUD-Basics</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
     <div class="container mt-3">
@@ -46,6 +47,7 @@ $result = $statement->fetchAll(PDO::FETCH_OBJ);
                             <th>Topsnelheid (km/u)</th>
                             <th>Hoogte (m)</th>
                             <th>Bouwjaar</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,6 +59,11 @@ $result = $statement->fetchAll(PDO::FETCH_OBJ);
                                 <td><?= $rollercoaster->Topspeed; ?></td>
                                 <td><?= $rollercoaster->Height; ?></td>
                                 <td><?= $rollercoaster->YOFC; ?></td>
+                                <td>
+                                    <a href="delete.php?id=<?= $rollercoaster->Id; ?>">
+                                        <i class="bi bi-x-square text-danger"></i>
+                                    </a>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
