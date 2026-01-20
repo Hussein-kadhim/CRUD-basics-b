@@ -10,7 +10,7 @@ $statement = $pdo->prepare($sql);
 $statement->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
 
 if ($statement->execute()) {
-    header("Refresh:3; url=index-pagina-read.php");
+    header("Refresh:3; url=index.php");
 }
 ?>
 

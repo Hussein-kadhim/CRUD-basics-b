@@ -36,6 +36,17 @@ $result = $statement->fetchAll(PDO::FETCH_OBJ);
             </div>
         </div>
 
+        <div class="row justify-content-center my-3">
+    <div class="col-10">
+        <h5>
+            Nieuwe achtbaan
+            <a href="./create.php">
+                <i class="bi bi-plus-square text-danger"></i>
+            </a>
+        </h5>
+    </div>
+</div>
+
         <div class="row justify-content-center mt-3">
             <div class="col-10">
                 <table class="table table-striped table-hover">
@@ -59,6 +70,12 @@ $result = $statement->fetchAll(PDO::FETCH_OBJ);
                                 <td><?= $rollercoaster->Topspeed; ?></td>
                                 <td><?= $rollercoaster->Height; ?></td>
                                 <td><?= $rollercoaster->YOFC; ?></td>
+                                <td class="text-center">
+    <a href="update.php?id=<?= $rollercoaster->Id; ?>">
+        <i class="bi bi-pencil-square text-success"></i>
+    </a>
+</td>
+
                                 <td>
                                     <a href="delete.php?id=<?= $rollercoaster->Id; ?>">
                                         <i class="bi bi-x-square text-danger"></i>
